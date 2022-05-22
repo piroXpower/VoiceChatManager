@@ -1,20 +1,20 @@
-from pyrogram import Client
 
 from pytgcalls import PyTgCalls
-from pytgcalls import StreamType
-from pytgcalls import idle
-from pytgcalls.media_devices import MediaDevices
-from pytgcalls.types import CaptureVideoDesktop
+from pytgcalls import Client
+from pytgcalls import idle 
+from config import app
 
-app = Client(
-    'py-tgcalls',
-    api_id=123456789,
-    api_hash='abcdef12345',
-)
+app = PyTgCalls(client)
 
-call_py = PyTgCalls(app)
-call_py.start()
+app.join_group_call(
+    -1001185324811,  
+), 
+app.get_participants(
+    -1001185324811,
+     video_camera(user_id) 
+), 
 
-print("VCMANAGER STARTED!! ") 
+await app.message(chat_id=CHAT_ID, "@admins {} **Is Sharing Video Camera**") 
 
+app.start()
 idle()

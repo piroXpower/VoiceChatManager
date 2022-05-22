@@ -2,9 +2,15 @@
 from pytgcalls import PyTgCalls
 from pytgcalls import Client
 from pytgcalls import idle 
-from config import app
+from config import Config
 
-app = PyTgCalls(client)
+CHAT = Config.CHAT                                                                                                                                                                                                                                                                                                                                    
+APP_ID = Config.API_ID                                                                                                                                                                                                                                                                                                                                        
+API_HASH = Config.API_HASH                                                                                                                                                                                                                                                                                                                                    
+SESSION_NAME = Config.STRING_SESSION  
+
+app = Client(SESSION_NAME, API_ID, API_HASH)
+
 
 app.join_group_call(
     -1001185324811,  

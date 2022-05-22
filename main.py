@@ -1,26 +1,26 @@
-
-from pytgcalls import PyTgCalls
-from pytgcalls import Client
-from pytgcalls import idle 
+from pytgcalls.types.list import List                                           
+from pytgcalls.methods.groups import get_participants                           
+from pytgcalls.types import GroupCallParticipant                                
+from pytgcalls import PyTgCalls                                                 
+from pyrogram import Client                                                     
+from pytgcalls import idle                                                      
 from config import Config
 
-CHAT = Config.CHAT                                                                                                                                                                                                                                                                                                                                    
-APP_ID = Config.API_ID                                                                                                                                                                                                                                                                                                                                        
-API_HASH = Config.API_HASH                                                                                                                                                                                                                                                                                                                                    
-SESSION_NAME = Config.STRING_SESSION  
-
-app = Client(SESSION_NAME, API_ID, API_HASH)
-
-
-app.join_group_call(
-    -1001185324811,  
-), 
-app.get_participants(
-    -1001185324811,
-     video_camera(user_id) 
-), 
-
-await app.message(chat_id=CHAT_ID, "@admins {} **Is Sharing Video Camera**") 
-
-app.start()
+CHAT = Config.CHAT
+API_ID = Config.API_ID
+API_HASH = Config.API_HASH
+SESSION_NAME = Config.STRING_SESSION                                            
+                                                                                
+client = Client(SESSION_NAME, API_ID, API_HASH)                                 
+                                                                                
+app = PyTgCalls(client)                                                         
+app.start                                                                       
+                                                                                
+list = app.get_participants(                                                           
+   -1001185324811,                                                                                      
+)                                                                               
+print(list)
+                                                                       
+client.send_message(CHAT, " {} Is Sharing Video Camera")                    
+                                                                                
 idle()
